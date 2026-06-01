@@ -1,0 +1,1236 @@
+/* ----- ОРИГИНАЛЬНЫЕ СТИЛИ (СОХРАНЕНЫ) ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Dela Gothic One', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Основной контейнер (фрейм) */
+.frame {
+    width: 100%;
+    max-width: 1440px;
+    background: linear-gradient(to bottom, #FFF3DD, #550000);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Контентная зона шапки */
+.content {
+    max-width: 1232px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 800px;
+    position: relative;
+}
+
+/* Верхняя часть с логотипом и меню */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 42px;
+    color: #550000;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+/* Десктопное меню */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-menu a {
+    font-family: 'Dela Gothic One', cursive;
+    color: #550000;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    opacity: 0.7;
+}
+
+/* Бургер-меню (скрыт на десктопе) */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+.burger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #550000;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+/* Правая часть с фотографией */
+.right-image {
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    width: 1200px;
+    height: 600px;
+    background: #8b4c4c;
+    background-image: url('banner.jpg'); 
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    z-index: 5;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.right-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Левый нижний прямоугольник с текстом */
+.info-box {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    max-width: 520px;
+    background-color: #FFF3DD;
+    border-radius: 30px;
+    padding: 30px 35px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: transform 0.3s;
+}
+.info-box:hover {
+    transform: scale(1.02);
+}
+.info-box p {
+    font-family: 'Dela Gothic One', cursive;
+    color: #550000;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ===== ОСНОВНАЯ ЧАСТЬ СТРАНИЦЫ ===== */
+.main-content {
+    max-width: 1232px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-title {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 36px;
+    color: #550000;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #550000, #FFF3DD);
+    border-radius: 2px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.article-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(85, 0, 0, 0.1);
+    cursor: pointer;
+}
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(85, 0, 0, 0.2);
+}
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s;
+}
+.article-card:hover .card-image {
+    transform: scale(1.05);
+}
+.card-image-1 { background-image: url("First.jpg"); }
+.card-image-2 { background-image: url('Second.jpg'); }
+.card-image-3 { background-image: url('Third.jpg'); }
+
+.card-content { padding: 25px; }
+.card-category {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 12px;
+    color: #550000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #FFF3DD;
+    border-radius: 20px;
+}
+.card-title {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 20px;
+    color: #550000;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+.card-excerpt {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+.read-more {
+    color: #550000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s;
+}
+.read-more:hover { gap: 10px; }
+
+/* Тренды */
+.trends-section {
+    margin: 80px 0;
+    background: linear-gradient(135deg, #FFF3DD 0%, #ffe4bc 100%);
+    border-radius: 40px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.trends-section::before {
+    content: 'TRENDS';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 120px;
+    color: rgba(85, 0, 0, 0.05);
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+.trends-title {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 32px;
+    color: #550000;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+.trends-scroll {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 20px 0 30px;
+    scrollbar-width: thin;
+    scrollbar-color: #550000 #FFF3DD;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    z-index: 2;
+}
+.trends-scroll:active { cursor: grabbing; }
+.trend-item {
+    min-width: 280px;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(85, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.trend-item:hover { transform: translateY(-5px); }
+.trend-year {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 14px;
+    color: #550000;
+    background: #FFF3DD;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.trend-name {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 24px;
+    color: #550000;
+    margin-bottom: 10px;
+}
+.trend-desc { font-size: 14px; color: #666; line-height: 1.5; }
+
+/* Новости */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 50px 0;
+}
+.news-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 20px;
+    padding: 20px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+.news-item:hover {
+    background: #FFF3DD;
+    transform: translateX(5px);
+}
+.news-date {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 14px;
+    color: #550000;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.news-content h4 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 18px;
+    color: #550000;
+    margin-bottom: 8px;
+}
+.news-content p { font-size: 14px; color: #666; }
+
+/* О нас */
+.about-section {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin: 80px 0;
+    background: #550000;
+    border-radius: 40px;
+    padding: 50px;
+    color: #FFF3DD;
+}
+.about-text { flex: 1; }
+.about-text h2 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+.about-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+.stat-item {
+    text-align: center;
+    transition: transform 0.3s;
+}
+.stat-item:hover { transform: scale(1.1); }
+.stat-number {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 42px;
+    color: #FFF3DD;
+}
+.stat-label { font-size: 14px; opacity: 0.8; }
+.about-image {
+    flex: 1;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFF3DD;
+    transition: transform 0.3s;
+    position: relative;
+}
+.about-image:hover { transform: scale(1.02); }
+
+/* Футер */
+.footer {
+    max-width: 1232px;
+    margin: 0 auto;
+    padding: 60px 20px 30px;
+    background-color: #1a1a1a;
+    color: #FFF3DD;
+    border-radius: 40px 40px 0 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer-logo {
+    font-family: 'Times New Roman', serif;
+    font-size: 32px;
+    color: #FFF3DD;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer-about p { opacity: 0.7; line-height: 1.6; font-size: 14px; }
+.footer-links h4, .footer-social h4 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #FFF3DD;
+}
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a {
+    color: #FFF3DD;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 243, 221, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF3DD;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+}
+.subscribe-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 243, 221, 0.1);
+    color: #FFF3DD;
+    font-family: 'Montserrat', sans-serif;
+}
+.subscribe-form button {
+    padding: 12px 25px;
+    background: #FFF3DD;
+    border: none;
+    border-radius: 25px;
+    color: #550000;
+    font-family: 'Dela Gothic One', cursive;
+    cursor: pointer;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 243, 221, 0.2);
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+/* Кнопка наверх */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #550000;
+    color: #FFF3DD;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    border: none;
+    z-index: 1000;
+}
+.back-to-top.show { opacity: 1; visibility: visible; }
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #550000;
+    color: #FFF3DD;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    transform: translateX(400px);
+    transition: 0.3s;
+    z-index: 2000;
+}
+.notification.show { transform: translateX(0); }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+.modal.show { display: flex; }
+.modal-content {
+    background: white;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 40px;
+    padding: 40px;
+    position: relative;
+    animation: modalSlideIn 0.3s;
+}
+@keyframes modalSlideIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #550000;
+}
+.modal h3 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 24px;
+    color: #550000;
+    margin-bottom: 20px;
+}
+.modal p { font-family: 'Montserrat', sans-serif; line-height: 1.8; color: #333; }
+
+/* ----- НОВЫЕ СТРАНИЦЫ В СТИЛИСТИКЕ САЙТА ----- */
+.pages-container {
+    margin-top: 60px;
+}
+.page {
+    display: none;
+    animation: pageFadeIn 0.5s ease;
+}
+.page.active-page {
+    display: block;
+}
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.page-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid rgba(85, 0, 0, 0.1);
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+}
+.page-tab {
+    font-family: 'Dela Gothic One', cursive;
+    background: none;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    color: #550000;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 40px;
+    letter-spacing: 0.5px;
+}
+.page-tab:hover {
+    background: #FFF3DD;
+    transform: translateY(-2px);
+}
+.page-tab.active-tab {
+    background: #550000;
+    color: #FFF3DD;
+    box-shadow: 0 5px 15px rgba(85, 0, 0, 0.3);
+}
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 20px;
+}
+.brand-card {
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid rgba(85, 0, 0, 0.08);
+}
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(85, 0, 0, 0.15);
+}
+.brand-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: #8b4c4c;
+}
+.brand-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(85,0,0,0.8), transparent);
+    padding: 20px 20px 15px;
+}
+.brand-name {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 24px;
+    color: #FFF3DD;
+    margin: 0;
+}
+.brand-country {
+    font-size: 13px;
+    color: rgba(255,243,221,0.8);
+    margin-top: 5px;
+}
+.brand-info {
+    padding: 25px;
+}
+.brand-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+.brand-link {
+    color: #550000;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.beauty-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+.beauty-card {
+    background: linear-gradient(135deg, #fff9f0 0%, #ffffff 100%);
+    border-radius: 25px;
+    padding: 30px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid rgba(85, 0, 0, 0.08);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+.beauty-card:hover {
+    transform: translateX(8px);
+    background: #FFF3DD;
+}
+.beauty-icon {
+    font-size: 48px;
+    min-width: 60px;
+    text-align: center;
+}
+.beauty-content h4 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 20px;
+    color: #550000;
+    margin-bottom: 10px;
+}
+.beauty-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+.interviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+.interview-card {
+    display: flex;
+    gap: 30px;
+    background: #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid rgba(85, 0, 0, 0.06);
+}
+.interview-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 35px rgba(85, 0, 0, 0.12);
+    background: #FFF3DD;
+}
+.interview-photo {
+    width: 140px;
+    min-width: 140px;
+    background-size: cover;
+    background-position: center;
+    background-color: #8b4c4c;
+    position: relative;
+}
+.interview-photo::after {
+    content: '"';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: rgba(255,243,221,0.3);
+    font-family: 'Dela Gothic One', cursive;
+}
+.interview-info {
+    padding: 25px 25px 25px 0;
+    flex: 1;
+}
+.interview-name {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 22px;
+    color: #550000;
+    margin-bottom: 5px;
+}
+.interview-role {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+.interview-quote {
+    font-size: 15px;
+    color: #444;
+    font-style: italic;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+.interview-quote::before {
+    content: "«";
+    color: #550000;
+    font-size: 20px;
+}
+.interview-quote::after {
+    content: "»";
+    color: #550000;
+    font-size: 20px;
+}
+
+/* ========== МОБИЛЬНАЯ АДАПТАЦИЯ (ПОЛНОСТЬЮ ИСПРАВЛЕНА) ========== */
+
+/* ПЛАНШЕТЫ (до 1200px) */
+@media screen and (max-width: 1200px) {
+    .right-image { width: 500px; height: 280px; top: 120px; right: 0; }
+    .info-box { max-width: 420px; padding: 25px; bottom: 50px; }
+    .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-content { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ПЛАНШЕТЫ (до 992px) */
+@media screen and (max-width: 992px) {
+    .right-image { width: 420px; height: 240px; top: 140px; right: 0; }
+    .info-box { max-width: 380px; bottom: 40px; padding: 22px; }
+    .about-section { flex-direction: column; text-align: center; }
+    .about-stats { justify-content: center; }
+    .news-grid { grid-template-columns: 1fr; }
+    .content { height: auto; min-height: 700px; padding-bottom: 30px; }
+}
+
+/* ТЕЛЕФОНЫ (до 768px) */
+@media screen and (max-width: 768px) {
+    /* Убираем ограничения ширины у контейнеров */
+    .frame {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .footer {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+        box-sizing: border-box;
+    }
+    
+    .main-content {
+        max-width: 100%;
+        width: 100%;
+        padding: 40px 15px;
+        box-sizing: border-box;
+    }
+    
+    /* Шапка и меню */
+    .content {
+        max-width: 100%;
+        width: 100%;
+        min-height: auto;
+        padding: 0 15px 30px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    .top-bar {
+    padding-top: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 1002; /* добавляем эту строку */
+}
+    
+    .logo {
+        font-size: 28px;
+    }
+    
+    /* Бургер-меню */
+    .burger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1003;
+        position: relative;
+    }
+    
+    .burger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: #550000;
+        margin: 5px 0;
+        transition: 0.3s;
+        border-radius: 3px;
+    }
+    
+    /* Меню (поверх всего) */
+   .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background: #FFF3DD;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.3s ease;
+    z-index: 1001;  /* ← было 1002, стало 1001 */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    display: flex;
+    margin: 0;
+    padding: 20px;
+}
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu a {
+        font-size: 18px;
+        white-space: normal;
+        color: #550000;
+        text-decoration: none;
+        font-family: 'Dela Gothic One', cursive;
+        text-transform: uppercase;
+    }
+    
+    /* Оверлей (тёмный фон) - должен быть под меню, но над контентом */
+    .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;  /* уже правильно */
+}
+    
+    .menu-overlay.active {
+        display: block;
+    }
+    
+    /* Баннер - на всю ширину */
+    .right-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    top: auto;
+    right: auto;
+    margin: 20px 0;
+    animation: none;
+    border-radius: 20px;
+    background-image: url('banner.jpg'); /* кодируем пробел */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    
+    .right-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Инфо-бокс - на всю ширину */
+    .info-box {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 25px;
+        margin: 0;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+    .info-box p {
+        font-size: 15px;
+    }
+    
+    /* Сетка статей - одна колонка */
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    /* Тренды */
+    .trends-section {
+        padding: 30px 20px;
+        margin: 40px 0;
+    }
+    .trends-title {
+        font-size: 24px;
+    }
+    .trend-item {
+        min-width: 240px;
+        padding: 20px;
+    }
+    .trend-name {
+        font-size: 20px;
+    }
+    
+    /* Новости */
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* О нас */
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 25px;
+        gap: 30px;
+    }
+    .about-text h2 {
+        font-size: 28px;
+    }
+    .about-stats {
+        justify-content: center;
+    }
+    .about-image {
+        width: 100%;
+        height: 220px;
+    }
+    
+    /* Футер - на всю ширину */
+    .footer {
+        padding: 40px 20px 25px;
+        border-radius: 0;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .subscribe-form {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .subscribe-form input {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    /* Вкладки */
+    .page-tabs {
+        justify-content: center;
+        gap: 10px;
+    }
+    .page-tab {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    /* Бренды */
+    .brands-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Уход за собой */
+    .beauty-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .beauty-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .beauty-icon {
+        margin-bottom: 10px;
+    }
+    
+    /* Интервью */
+    .interview-card {
+        flex-direction: column;
+    }
+    .interview-photo {
+        width: 100%;
+        height: 180px;
+        border-radius: 30px 30px 0 0;
+    }
+    .interview-photo::after {
+        display: none;
+    }
+    .interview-info {
+        padding: 20px;
+        text-align: center;
+    }
+    .interview-name {
+        font-size: 20px;
+    }
+    .interview-quote {
+        font-size: 14px;
+    }
+    
+    /* Модальное окно */
+    .modal-content {
+        padding: 30px 20px;
+        width: 90%;
+    }
+    .modal h3 {
+        font-size: 20px;
+    }
+    .modal p {
+        font-size: 14px;
+    }
+    
+    /* Кнопка наверх */
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    /* Уведомление */
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        transform: translateY(-100px);
+        text-align: center;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    .notification.show {
+        transform: translateY(0);
+    }
+}
+
+/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 480px) */
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .info-box p {
+        font-size: 14px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+    }
+    .card-excerpt {
+        font-size: 13px;
+    }
+    
+    .trends-section {
+        padding: 20px 15px;
+    }
+    .trend-item {
+        min-width: 200px;
+        padding: 15px;
+    }
+    .trend-name {
+        font-size: 18px;
+    }
+    .trend-desc {
+        font-size: 12px;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .page-tab {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .footer-logo {
+        font-size: 24px;
+    }
+    .footer-links h4, .footer-social h4 {
+        font-size: 16px;
+    }
+    
+    .modal-content {
+        padding: 25px 15px;
+    }
+}
+
+/* ТЕЛЕФОНЫ ДО 375px */
+@media screen and (max-width: 375px) {
+    .logo {
+        font-size: 20px;
+    }
+    
+    .section-title {
+        font-size: 22px;
+    }
+    
+    .trend-item {
+        min-width: 180px;
+    }
+    
+    .page-tab {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+}
+
+/* ОТКЛЮЧЕНИЕ HOVER НА ТАЧ-УСТРОЙСТВАХ */
+@media (hover: none) and (pointer: coarse) {
+    .article-card:hover,
+    .trend-item:hover,
+    .info-box:hover,
+    .stat-item:hover,
+    .about-image:hover,
+    .brand-card:hover,
+    .beauty-card:hover,
+    .interview-card:hover {
+        transform: none;
+    }
+    .article-card:active,
+    .brand-card:active,
+    .beauty-card:active,
+    .interview-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s;
+    }
+}

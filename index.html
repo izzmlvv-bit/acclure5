@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Acclure - онлайн журнал о моде</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Оригинальные шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="frame">
+        <div class="content">
+            <div class="top-bar">
+                <div class="logo">Acclure</div>
+                <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#main">Главная</a>
+                    <a href="#articles">Статьи</a>
+                    <a href="#trends">Тренды сезона</a>
+                    <a href="#news">Новости</a>
+                    <a href="#about">О нас</a>
+                </nav>
+            </div>
+         <div class="right-image"></div>
+            <div class="info-box">
+                <p>Acclure - онлайн журнал, посвященный модной индустрии. Мы стремимся быть авторитетным и вдохновляющим источником информации.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content" id="main">
+        <h2 class="section-title" id="articles">Последние статьи</h2>
+        <div class="articles-grid">
+            <!-- Статья 1: Весенние тренды -->
+            <div class="article-card" data-article="1" onclick="openArticle(1)">
+                <div class="card-image card-image-1"></div>
+                <div class="card-content">
+                    <span class="card-category">Тренды</span>
+                    <h3 class="card-title">Весенние тренды 2026: что носить в новом сезоне</h3>
+                    <p class="card-excerpt">Пастельные тона, объемные рукава и экологичные материалы — главные тренды этой весны...</p>
+                    <span class="read-more">Читать далее →</span>
+                </div>
+            </div>
+
+            <!-- Статья 2: Базовый гардероб -->
+            <div class="article-card" data-article="2" onclick="openArticle(2)">
+                <div class="card-image card-image-2"></div>
+                <div class="card-content">
+                    <span class="card-category">Стиль</span>
+                    <h3 class="card-title">Как собрать базовый гардероб: советы стилистов</h3>
+                    <p class="card-excerpt">10 вещей, которые должны быть в шкафу у каждой модницы...</p>
+                    <span class="read-more">Читать далее →</span>
+                </div>
+            </div>
+
+            <!-- Статья 3: Сумки 2026 -->
+            <div class="article-card" data-article="3" onclick="openArticle(3)">
+                <div class="card-image card-image-3"></div>
+                <div class="card-content">
+                    <span class="card-category">Аксессуары</span>
+                    <h3 class="card-title">Сумки 2026: от микро до макси</h3>
+                    <p class="card-excerpt">Обзор главных трендов в мире сумок: какие модели будут на пике популярности в этом году...</p>
+                    <span class="read-more">Читать далее →</span>
+                </div>
+            </div>
+        </div>
+
+     <div class="trends-section" id="trends">
+    <h3 class="trends-title">Тренды сезона</h3>
+    <div class="trends-scroll" id="trendsScroll">
+        <div class="trend-item" onclick="openTrendModal('2025', 'Color Blocking', 'Смелые цветовые сочетания и яркие контрасты в одном образе. Главный тренд 2025 года, который позволяет экспериментировать с цветом и создавать запоминающиеся образы.')">
+            <div class="trend-year">2025</div>
+            <div class="trend-name">Color Blocking</div>
+            <div class="trend-desc">Смелые цветовые сочетания и яркие контрасты в одном образе</div>
+        </div>
+        <div class="trend-item" onclick="openTrendModal('2026', 'Oversized', 'Объемные силуэты, свободный крой и максимальный комфорт. Oversized продолжает оставаться в топе, предлагая новые варианты пропорций и сочетаний.')">
+            <div class="trend-year">2026</div>
+            <div class="trend-name">Oversized</div>
+            <div class="trend-desc">Объемные силуэты, свободный крой и максимальный комфорт</div>
+        </div>
+        <div class="trend-item" onclick="openTrendModal('2026', 'Eco Fashion', 'Переработанные материалы и экологичный подход к моде. Бренды всё чаще используют устойчивые ткани, а покупатели ценят осознанное потребление.')">
+            <div class="trend-year">2026</div>
+            <div class="trend-name">Eco Fashion</div>
+            <div class="trend-desc">Переработанные материалы и экологичный подход к моде</div>
+        </div>
+        <div class="trend-item" onclick="openTrendModal('2026', 'Кожаные вещи', 'От плащей до аксессуаров – кожа снова в моде. Особенно популярны тотальный кожаный look и вещи из эко-кожи ярких оттенков.')">
+            <div class="trend-year">2026</div>
+            <div class="trend-name">Кожаные вещи</div>
+            <div class="trend-desc">От плащей до аксессуаров - кожа снова в моде</div>
+        </div>
+        <div class="trend-item" onclick="openTrendModal('2026', 'Прозрачность', 'Шифон, сетка и другие полупрозрачные материалы создают эффект невесомости и добавляют образу загадочности. Идеально для наслоений.')">
+            <div class="trend-year">2026</div>
+            <div class="trend-name">Прозрачность</div>
+            <div class="trend-desc">Шифон, сетка и другие полупрозрачные материалы</div>
+        </div>
+    </div>
+</div>
+
+        <h2 class="section-title" id="news">Новости индустрии</h2>
+        <div class="news-grid">
+            <div class="news-item" onclick="showNotification('Неделя моды в Париже: главные показы')"><div class="news-date"><span>15</span><br>Мар</div><div class="news-content"><h4>Неделя моды в Париже</h4><p>Главные показы и звездные гости на улицах французской столицы</p></div></div>
+            <div class="news-item" onclick="showNotification('Новая коллекция Gucci: эксклюзивный обзор')"><div class="news-date"><span>10</span><br>Мар</div><div class="news-content"><h4>Новая коллекция Gucci</h4><p>Презентация весенней коллекции прошла в Милане</p></div></div>
+            <div class="news-item" onclick="showNotification('Met Gala 2025: тема сюрреализм')"><div class="news-date"><span>5</span><br>Мар</div><div class="news-content"><h4>Met Gala 2025</h4><p>Объявлена тема следующего бала - "Сюрреализм в моде"</p></div></div>
+            <div class="news-item" onclick="showNotification('Российская неделя моды: даты и участники')"><div class="news-date"><span>1</span><br>Мар</div><div class="news-content"><h4>Российская неделя моды</h4><p>Даты проведения и список участников главного fashion-события</p></div></div>
+        </div>
+
+        <div class="about-section" id="about">
+            <div class="about-text">
+                <h2>О нас</h2>
+                <p>Acclure - это не просто онлайн журнал о моде. Мы создаем пространство, где встречаются вдохновение, экспертиза и актуальные тренды. Наша команда состоит из профессиональных стилистов, fashion-журналистов и фотографов, которые ежедневно работают над тем, чтобы вы были в курсе всех событий модной индустрии.</p>
+                <p>Мы сотрудничаем с ведущими мировыми брендами и дизайнерами, посещаем главные fashion-события и первыми рассказываем о новых коллекциях и трендах.</p>
+                <div class="about-stats">
+                    <div class="stat-item"><div class="stat-number">5+</div><div class="stat-label">лет работы</div></div>
+                    <div class="stat-item"><div class="stat-number">1000+</div><div class="stat-label">статей</div></div>
+                    <div class="stat-item"><div class="stat-number">50k+</div><div class="stat-label">читателей</div></div>
+                </div>
+            </div>
+            <div class="about-image" style="background-image: url('Five.jpg'); background-size: cover; background-position: center;">
+                <div style="position: absolute; inset: 0; background: rgba(85,0,0,0.4); display: flex; align-items: center; justify-content: center; border-radius: 30px;">
+                    <span style="color: white; font-size: 24px; font-family: 'Dela Gothic One', cursive;">ACCLURE TEAM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- НОВЫЕ СТРАНИЦЫ (БРЕНДЫ, УХОД, ИНТЕРВЬЮ) -->
+    <div class="main-content pages-container">
+        <div class="page-tabs">
+            <button class="page-tab active-tab" data-page="brands">БРЕНДЫ</button>
+            <button class="page-tab" data-page="beauty">УХОД ЗА СОБОЙ</button>
+            <button class="page-tab" data-page="interviews">ИНТЕРВЬЮ</button>
+        </div>
+
+        <!-- СТРАНИЦА БРЕНДОВ -->
+        <div id="brandsPage" class="page active-page">
+            <div class="brands-grid">
+                <div class="brand-card" onclick="openBrandModal('GUCCI', 'Италия', 'Итальянский дом моды, основанный Гуччо Гуччи в 1921 году. Символ эклектики, смелых принтов и узнаваемого логотипа. Культовые модели: сумка Jackie 1961, лоферы Horsebit. Под руководством Сабато Де Сарно бренд продолжает переосмысливать классику.')">
+                    <div class="brand-image"  style="background-color: #1a4d3e;";"><div class="brand-overlay"><div class="brand-name">GUCCI</div><div class="brand-country">🇮🇹 Италия</div></div></div>
+                    <div class="brand-info"><p class="brand-desc">Эклектика, яркие принты и смелые решения. Символ современной роскоши с 1921 года.</p><span class="brand-link">Узнать больше →</span></div>
+                </div>
+                <div class="brand-card" onclick="openBrandModal('PRADA', 'Италия', 'Основан в 1913 году Марио Прадой. Икона минимализма и интеллектуальной моды. Знаменитые нейлоновые рюкзаки и сумки Galleria. Сегодня под руководством Миуччи Прады и Рафа Симонса бренд исследует пересечение моды и культуры.')">
+                    <div class="brand-image"  style="background-color: #2c2c2c;";"><div class="brand-overlay"><div class="brand-name">PRADA</div><div class="brand-country">🇮🇹 Италия</div></div></div>
+                    <div class="brand-info"><p class="brand-desc">Минимализм с интеллектуальным подходом. Переосмысление классики и культ нейлона.</p><span class="brand-link">Узнать больше →</span></div>
+                </div>
+                <div class="brand-card" onclick="openBrandModal('BALENCIAGA', 'Испания/Франция', 'Основан Кристобалем Баленсиагой в 1917 году. Сегодня под руководством Демны — авангард, oversize-силуэты и уличная эстетика. Кроссовки Triple S и сумки City Bag стали иконами современности.')">
+                    <div class="brand-image"  style="background-color: #1a1a2e;";"><div class="brand-overlay"><div class="brand-name">BALENCIAGA</div><div class="brand-country">🇪🇸 Испания / 🇫🇷 Франция</div></div></div>
+                    <div class="brand-info"><p class="brand-desc">Авангард, oversize-силуэты и уличная эстетика. Будущее моды сегодня.</p><span class="brand-link">Узнать больше →</span></div>
+                </div>
+                <div class="brand-card" onclick="openBrandModal('SAINT LAURENT', 'Франция', 'Основан Ивом Сен-Лораном в 1961 году. Изобрел женский смокинг Le Smoking, культовые сапоги и образ рок-звезды. Энтони Ваккареllo продолжает традицию чувственной и дерзкой элегантности.')">
+                    <div class="brand-image"  style="background-color: #3d1c1c;";"><div class="brand-overlay"><div class="brand-name">SAINT LAURENT</div><div class="brand-country">🇫🇷 Франция</div></div></div>
+                    <div class="brand-info"><p class="brand-desc">Рок-н-ролльный шик, кожа, смокинги и соблазнительные силуэты. Вечная классика.</p><span class="brand-link">Узнать больше →</span></div>
+                </div>
+                <div class="brand-card" onclick="openBrandModal('LOUIS VUITTON', 'Франция', 'Основан в 1854 году. Легендарные монограммы и дорожные сумки. Сегодня — синтез традиций и сотрудничества с современными художниками под руководством Николя Жескьера.')">
+                    <div class="brand-image"  style="background-color: #8B6914;";"><div class="brand-overlay"><div class="brand-name">LOUIS VUITTON</div><div class="brand-country">🇫🇷 Франция</div></div></div>
+                    <div class="brand-info"><p class="brand-desc">Легендарные монограммы, роскошные чемоданы и путешествия как искусство жизни.</p><span class="brand-link">Узнать больше →</span></div>
+                </div>
+                <div class="brand-card" onclick="openBrandModal('DIOR', 'Франция', 'Основан Кристианом Диором в 1946 году. Революционный силуэт New Look. Сегодня Мария Грация Кьюри привносит феминистский взгляд и цитаты из искусства.')">
+                    <div class="brand-image"  style="background-color: #2a4b6e;";"><div class="brand-overlay"><div class="brand-name">DIOR</div><div class="brand-country">🇫🇷 Франция</div></div></div>
+                    <div class="brand-info"><p class="brand-desc">Элегантность, архитектурные силуэты и цветочные мотивы. Французское haute couture.</p><span class="brand-link">Узнать больше →</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- СТРАНИЦА УХОД ЗА СОБОЙ -->
+        <div id="beautyPage" class="page">
+            <div class="beauty-grid">
+                <div class="beauty-card" onclick="openBeautyModal('10-ступенчатый корейский уход', 'Корейская система ухода за кожей включает 10 этапов: от гидрофильного масла до ночной маски. Главные принципы — увлажнение, бережное очищение и защита от солнца. Популярные ингредиенты: муцин улитки, центелла азиатская, прополис.')">
+                    <div class="beauty-icon">🧴</div><div class="beauty-content"><h4>10-ступенчатый корейский уход</h4><p>Двойное очищение, тонеры, эссенции — секрет сияющей кожи K-beauty. Узнайте все этапы идеальной рутины.</p></div>
+                </div>
+                <div class="beauty-card" onclick="openBeautyModal('Ретиноиды: золотой стандарт', 'Ретинол и его производные — лучшие ингредиенты против старения и акне. Начинайте с концентрации 0.2-0.3%, используйте на ночь, обязательно наносите SPF утром. Эффект: разглаживание морщин, улучшение текстуры кожи.')">
+                    <div class="beauty-icon">✨</div><div class="beauty-content"><h4>Ретиноиды: золотой стандарт</h4><p>Как правильно вводить ретинол в рутину для борьбы с морщинами и акне. Советы дерматологов.</p></div>
+                </div>
+                <div class="beauty-card" onclick="openBeautyModal('Гуаша и массаж лица', 'Гуаша — скребок из нефрита или кварца. Техника: движения от центра лица к периферии, 10-15 минут в день. Эффект: лимфодренаж, улучшение тонуса, разглаживание мимических морщин. Для лучшего скольжения используйте масло.')">
+                    <div class="beauty-icon">💎</div><div class="beauty-content"><h4>Гуаша и массаж лица</h4><p>Древние техники для лифтинг-эффекта и здорового цвета лица. Просто и эффективно в домашних условиях.</p></div>
+                </div>
+                <div class="beauty-card" onclick="openBeautyModal('SPF-защита 365 дней', 'Солнцезащитный крем — must-have круглый год. Выбирайте SPF 30-50, наносите за 20 минут до выхода, обновляйте каждые 2 часа. Физические фильтры (оксид цинка) подходят для чувствительной кожи, химические — для остальных.')">
+                    <div class="beauty-icon">☀️</div><div class="beauty-content"><h4>SPF-защита 365 дней</h4><p>Всё, что нужно знать о солнцезащите: как выбрать и почему это важно каждый день, даже зимой.</p></div>
+                </div>
+                <div class="beauty-card" onclick="openBeautyModal('Кислотный пилинг дома', 'AHA-кислоты (гликолевая, молочная) для сияния, BHA (салициловая) для пор, PHA для чувствительной кожи. Начинайте с 1-2 раз в неделю, всегда используйте SPF после. Не сочетайте с ретинолом в один вечер.')">
+                    <div class="beauty-icon">🧪</div><div class="beauty-content"><h4>Кислотный пилинг дома</h4><p>Мягкое отшелушивание без похода к косметологу. Выбирайте кислоту под свой тип кожи.</p></div>
+                </div>
+                <div class="beauty-card" onclick="openBeautyModal('Уход за кожей вокруг глаз', 'Кожа вокруг глаз — самая тонкая, требует деликатного ухода. Используйте патчи с кофеином от отеков, ретинол-крем от морщин и обязательно SPF. Не трите глаза — только промокающие движения.')">
+                    <div class="beauty-icon">👁️</div><div class="beauty-content"><h4>Уход за кожей вокруг глаз</h4><p>Секреты свежего взгляда: патчи, сыворотки и правильные техники нанесения.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- СТРАНИЦА ИНТЕРВЬЮ -->
+        <div id="interviewsPage" class="page">
+            <div class="interviews-grid">
+                <div class="interview-card" onclick="openInterviewModal('Анна Винтур', 'Главный редактор Vogue', 'Мода — это не просто одежда. Это отражение того, что происходит в мире. Мы должны рассказывать истории, которые имеют значение. Сегодня digital-революция изменила всё, но качественный контент остаётся королём. Я никогда не снимаю тёмные очки, потому что они стали частью моего образа и маленькой броней от мира.')">
+                    <div class="interview-photo"  style="background-color: #3d1c1c;";"></div>
+                    <div class="interview-info"><div class="interview-name">Анна Винтур</div><div class="interview-role">Главный редактор Vogue</div><div class="interview-quote">Мода — это не просто одежда. Это отражение того, что происходит в мире.</div></div>
+                </div>
+                <div class="interview-card" onclick="openInterviewModal('Демна Гвасалия', 'Креативный директор Balenciaga', 'Мода должна задавать вопросы, а не давать готовые ответы. Мои коллекции — это реакция на то, что меня окружает: политика, экология, технологии. Oversize — это не просто форма, это идея свободы и комфорта. Будущее моды — за устойчивым развитием и виртуальными пространствами.')">
+                    <div class="interview-photo"  style="background-color: #8B6914;";"></div>
+                    <div class="interview-info"><div class="interview-name">Демна Гвасалия</div><div class="interview-role">Креативный директор Balenciaga</div><div class="interview-quote">Мода должна задавать вопросы, а не давать готовые ответы.</div></div>
+                </div>
+                <div class="interview-card" onclick="openInterviewModal('Миучча Прада', 'Содизайнер Prada', 'Интеллект в моде важнее, чем просто красивая одежда. Мы с Рафом Симонсом создаём диалог между разными поколениями и культурами. Нейлон стал символом нашей философии: практичность не исключает красоты. Prada остаётся независимой, потому что мы верим в медленную моду и вдумчивое потребление.')">
+                    <div class="interview-photo"  style="background-color: #2a4b6e;";"></div>
+                    <div class="interview-info"><div class="interview-name">Миучча Прада</div><div class="interview-role">Содизайнер Prada</div><div class="interview-quote">Интеллект в моде важнее, чем просто красивая одежда.</div></div>
+                </div>
+                <div class="interview-card" onclick="openInterviewModal('Ким Джонс', 'Креативный директор Dior Men', 'Я объединяю уличную культуру с высокой модой. Мои коллекции — это коллаборации с современными художниками: от KAWS до Peter Doig. Мужская мода сейчас переживает ренессанс: больше цвета, больше свободы, меньше ограничений. Главное — создавать одежду, в которой хочется жить.')">
+                    <div class="interview-photo"  style="background-color: #1a4d3e;";"></div>
+                    <div class="interview-info"><div class="interview-name">Ким Джонс</div><div class="interview-role">Креативный директор Dior Men</div><div class="interview-quote">Я объединяю уличную культуру с высокой модой. Главное — создавать одежду, в которой хочется жить.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about"><div class="footer-logo">Acclure</div><p>Онлайн журнал, посвященный модной индустрии. Мы стремимся быть авторитетным и вдохновляющим источником информации о моде, стиле и трендах.</p></div>
+            <div class="footer-links"><h4>Навигация</h4><ul><li><a href="#">Главная</a></li><li><a href="#">Статьи</a></li><li><a href="#">Тренды сезона</a></li><li><a href="#">Новости</a></li><li><a href="#">О нас</a></li></ul></div>
+            <div class="footer-links"><h4>Рубрики</h4><ul><li><a href="#">Мода</a></li><li><a href="#">Красота</a></li><li><a href="#">Стиль жизни</a></li><li><a href="#">Интервью</a></li><li><a href="#">События</a></li></ul></div>
+            <div class="footer-social"><h4>Мы в соцсетях</h4><div class="social-icons"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">tg</a><a href="#" class="social-icon">vk</a><a href="#" class="social-icon">yt</a></div><h4>Подписка на новости</h4><form class="subscribe-form" onsubmit="event.preventDefault(); showNotification('Вы подписались на новости!');"><input type="email" placeholder="Ваш email" required><button type="submit">Подписаться</button></form></div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 Acclure. Все права защищены. 18+</p></div>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <div id="notification" class="notification">Уведомление</div>
+    <div id="modal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal()">×</button><h3 id="modalTitle"></h3><p id="modalText"></p></div></div>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <script>
+        const articlesData = {
+            1: { title: 'Весенние тренды 2026: что носить в новом сезоне', text: 'Весна 2026 года обещает быть яркой и разнообразной. Главные тренды: пастельные тона (лавандовый, мятный, небесно-голубой), объемные рукава и плечи, экологичные материалы (переработанный полиэстер, органический хлопок). Модные дома предлагают сочетать нежное с грубым: например, шелковые платья с грубыми ботинками на тракторной подошве. Аксессуары: крупные серьги-цепочки и сумки-корзинки.' },
+            2: { title: 'Как собрать базовый гардероб: советы стилистов', text: 'Базовый гардероб — это 10-15 вещей, которые сочетаются друг с другом. Must-have: белая хлопковая рубашка, прямые джинсы темно-синего цвета, черные брюки-кюлоты, кашемировый свитер нейтрального оттенка, тренчкот, маленькое черное платье, кожаная куртка, белые кеды, лодочки на среднем каблуке и сумка-тоут. Важно: выбирайте качественные ткани и классические фасоны без лишнего декора.' },
+            3: { title: 'Сумки 2026: от микро до макси', text: 'Тренды сумок 2026 года удивляют разнообразием. На подиумах представлены как миниатюрные модели (размером с ладонь), так и огромные сумки-бэги. В моде: плетеные сумки из рафии, модели с анималистичным принтом (зебра, леопард), сумки-мешки из мягкой кожи, а также прозрачные PVC-сумки. Цветовая гамма: от классического черного и бежевого до кислотно-зеленого и фуксии. Совет: выбирайте сумку, которая станет акцентом образа.' }
+        };
+
+        function showNotification(msg) { 
+            let n = document.getElementById('notification'); 
+            n.textContent = msg; 
+            n.classList.add('show'); 
+            setTimeout(() => n.classList.remove('show'), 3000); 
+        }
+
+        function closeModal() { 
+            document.getElementById('modal').classList.remove('show'); 
+        }
+
+        function openArticle(id) {  
+            const article = articlesData[id];
+            if (!article) return;
+            document.getElementById('modalTitle').textContent = article.title;
+            document.getElementById('modalText').textContent = article.text;
+            document.getElementById('modal').classList.add('show');
+        }
+
+        // Горизонтальный скролл трендов
+        const scrollContainer = document.getElementById('trendsScroll');
+        if(scrollContainer) { 
+            let isDown=false, startX, scrollLeft; 
+            scrollContainer.addEventListener('touchstart', (e) => { isDown=true; startX=e.touches[0].pageX-scrollContainer.offsetLeft; scrollLeft=scrollContainer.scrollLeft; }); 
+            scrollContainer.addEventListener('touchend', () => isDown=false); 
+            scrollContainer.addEventListener('touchmove', (e) => { if(!isDown) return; e.preventDefault(); const x=e.touches[0].pageX-scrollContainer.offsetLeft; scrollContainer.scrollLeft=scrollLeft-(x-startX)*1.5; }); 
+            scrollContainer.addEventListener('mousedown', (e) => { isDown=true; startX=e.pageX-scrollContainer.offsetLeft; scrollLeft=scrollContainer.scrollLeft; }); 
+            window.addEventListener('mouseup', () => isDown=false); 
+            window.addEventListener('mousemove', (e) => { if(!isDown) return; e.preventDefault(); const x=e.pageX-scrollContainer.offsetLeft; scrollContainer.scrollLeft=scrollLeft-(x-startX)*2; }); 
+        }
+
+        // Бургер-меню
+        const burger = document.getElementById('burgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        burger.addEventListener('click',()=>{
+            navMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        menuOverlay.addEventListener('click',()=>{
+            navMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        window.addEventListener('scroll', () => { 
+            const btn = document.querySelector('.back-to-top'); 
+            if(window.scrollY>300) btn.classList.add('show'); 
+            else btn.classList.remove('show'); 
+        });
+
+        // ===== ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ =====
+        function switchToPage(pageId) {
+            document.getElementById('brandsPage').classList.remove('active-page');
+            document.getElementById('beautyPage').classList.remove('active-page');
+            document.getElementById('interviewsPage').classList.remove('active-page');
+            document.getElementById(pageId + 'Page').classList.add('active-page');
+            
+            document.querySelectorAll('.page-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+                if (tab.getAttribute('data-page') === pageId) {
+                    tab.classList.add('active-tab');
+                }
+            });
+        }
+
+        document.querySelectorAll('.page-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const page = tab.getAttribute('data-page');
+                if (page) switchToPage(page);
+            });
+        });
+
+        function openBrandModal(name, country, description) {
+            const modal = document.getElementById('modal');
+            document.getElementById('modalTitle').innerHTML = `🏷️ ${name}`;
+            document.getElementById('modalText').innerHTML = `<strong>${country}</strong><br><br>${description}`;
+            modal.classList.add('show');
+        }
+
+        function openBeautyModal(title, description) {
+            const modal = document.getElementById('modal');
+            document.getElementById('modalTitle').innerHTML = `💆‍♀️ ${title}`;
+            document.getElementById('modalText').innerHTML = description;
+            modal.classList.add('show');
+        }
+
+        function openInterviewModal(name, role, quote) {
+            const modal = document.getElementById('modal');
+            document.getElementById('modalTitle').innerHTML = `🎤 ${name}`;
+            document.getElementById('modalText').innerHTML = `<strong>${role}</strong><br><br>${quote}`;
+            modal.classList.add('show');
+        }
+
+        function openTrendModal(year, name, description) {
+    const modal = document.getElementById('modal');
+    document.getElementById('modalTitle').innerHTML = `📈 ${year} · ${name}`;
+    document.getElementById('modalText').innerHTML = description;
+    modal.classList.add('show');
+}
+        
+    </script>
+</body>
+</html>
